@@ -53,13 +53,32 @@ body {
 	background-color: var(--color-stone-100);
 	font-family: var(--font-base);
 	font-size: var(--text-base-size);
-	height: 150vh;
+	height: 200vh;
 }
 
 ul,
 ol {
 	padding-left: 0;
-  list-style-position: inside;
+	display: inline-block;
+  list-style-position: outside;
+  text-align: left;
+}
+
+li {
+	margin-left: var(--spacing-medium);
+	padding-left: var(--spacing-semi-medium);
+}
+
+li::marker {
+	color: var(--color-brown-800);
+}
+
+li:not(:last-child) {
+	padding-bottom: var(--spacing-small);
+}
+
+ol li::marker {
+  font-weight: 700;
 }
 
 header,
@@ -82,11 +101,17 @@ header {
 	margin-bottom: var(--spacing-medium);
 	font-family: var(--font-accent);
 	color: var(--color-stone-900);
+	margin-top: 0;
 }
 
 img {
 	width: 100%;
 	border-radius: var(--radius-small);
+}
+
+h2 {
+	color: var(--color-brown-800);
+	margin: var(--spacing-medium) 0;
 }
 
 .container {
@@ -114,18 +139,11 @@ img {
 	font-size: var(--text-preparation-title);
 	color: var(--color-rose-800);
 	margin-bottom: var(--spacing-medium);
-}
-
-.preparation-container__list-item span {
-	margin-left: var(--spacing-medium);
+	margin-top: 0;
 }
 
 .preparation-container__list-item::marker {
 	color: var(--color-rose-800);
-}
-
-.preparation-container__list-item:not(:last-child) {
-	padding-bottom: var(--spacing-small);
 }
 
 @media (max-width: 375px) {
