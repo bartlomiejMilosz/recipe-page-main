@@ -8,7 +8,7 @@
 	--color-rose-800: hsl(332, 51%, 32%);
 	--color-rose-50: hsl(330, 100%, 98%);
 
-	--container-width-base: 650px;
+	--container-width-base: 725px;
 	--breakpoint-mobile: 375px;
 	--breakpoint-desktop: 1440px;
 
@@ -24,8 +24,10 @@
 
 	--font-base: "Outfit", sans-serif;
 	--font-accent: "YoungSerif", serif;
-	--text-base-size: 16px;
+	--text-header-title: 40px;
+	--text-title: 32px;
 	--text-preparation-title: 24px;
+	--text-paragraph: 16px;
 }
 
 @font-face {
@@ -52,8 +54,8 @@ body {
 	color: var(--color-stone-600);
 	background-color: var(--color-stone-100);
 	font-family: var(--font-base);
-	font-size: var(--text-base-size);
-	height: 200vh;
+	font-size: var(--text-paragraph);
+	height: 225vh;
 }
 
 ul,
@@ -85,7 +87,6 @@ header,
 main {
 	width: 100%;
 	padding: var(--spacing-large);
-	padding-top: var(--spacing-semi-medium);
 	background-color: var(--color-white);
 }
 
@@ -100,6 +101,7 @@ header {
 .header__title {
 	margin-bottom: var(--spacing-medium);
 	font-family: var(--font-accent);
+	font-size: var(--text-header-title);
 	color: var(--color-stone-900);
 	margin-top: 0;
 }
@@ -109,9 +111,15 @@ img {
 	border-radius: var(--radius-small);
 }
 
+h1, h2 {
+	font-weight: 500;
+}
+
 h2 {
 	color: var(--color-brown-800);
-	margin: var(--spacing-medium) 0;
+	margin: var(--spacing-semi-medium) 0;
+	font-family: var(--font-accent);
+	font-size: var(--text-title);
 }
 
 .container {
@@ -139,11 +147,55 @@ h2 {
 	font-size: var(--text-preparation-title);
 	color: var(--color-rose-800);
 	margin-bottom: var(--spacing-medium);
+	font-family: var(--font-base);
+	font-weight: 600;
 	margin-top: 0;
 }
 
 .preparation-container__list-item::marker {
 	color: var(--color-rose-800);
+}
+
+.separator {
+	border: 0.75px solid var(--color-stone-150);
+	margin-top: var(--spacing-large);
+	width: 100%;
+}
+
+.natrution-container__title {
+	margin-bottom: var(--spacing-medium);
+}
+
+.natrution-container__description {
+	margin-bottom: var(--spacing-medium);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	padding: var(--spacing-medium) 0;
+}
+
+td:nth-child(2) {
+	color: var(--color-brown-800);
+	font-weight: 700;
+}
+
+/* Target specific rows in the first column */
+tr:nth-child(1) td:first-child,
+tr:nth-child(2) td:first-child,
+tr:nth-child(3) td:first-child,
+tr:nth-child(4) td:first-child {
+  padding-left: var(--spacing-large);
+	width: 50%;
+}
+
+
+tr:not(:last-child) {
+	border-bottom: 1px solid var(--color-stone-150);
 }
 
 @media (max-width: 375px) {
